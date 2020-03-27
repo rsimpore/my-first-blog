@@ -58,7 +58,7 @@ ROOT_URLCONF = 'cartables.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["/Users/roland/Projets/templates/"],
+        'DIRS': ['/Users/roland/Projets/templates/',''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
