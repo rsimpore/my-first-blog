@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '92+a$08_84ac&*n4xvt&cup&%ymq2=etk#df_l(w0b6t&!n2c)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["www.cartablesdafrique.com"]
+ALLOWED_HOSTS = ['localhost','127.0.0.1','cartablesdafrique.com','https://www.cartablesdafrique.com','www.cartablesdafrique.com']
 
 
 # Application definition
