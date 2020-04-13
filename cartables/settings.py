@@ -58,7 +58,7 @@ ROOT_URLCONF = 'cartables.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/roland/Projets/templates/',''],
+        'DIRS': ['/Users/jvtraore/GitHub/my-first-blog/templates/',''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
 #        'OPTIONS': {"init_command": "SET foreign_key_checks = 0;"},
-        'NAME': 'site_cartables',
+        'NAME': 'sitecartable',
         'USER': 'root',
-        'PASSWORD': 'NataSQL$',
+        'PASSWORD': 'ewenvictor',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 # This one was not by default and has been added for this project
 
 STATICFILES_DIRS = (
-                    "/Users/roland/Projets/static/",
+                    "/Users/jvtraore/GitHub/my-first-blog/static/",
                     )
 
 # Complete automatically URL with slash
