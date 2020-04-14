@@ -65,7 +65,7 @@ TEMPLATES = [
 # VERSION ROLAND
 #        'DIRS': ['/Users/roland/Projets/templates/',''],
 # VERSION VICTOR
-#        'DIRS': ['',''],
+#        'DIRS': ['/Users/jvtraore/GitHub/my-first-blog/templates/',''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,9 +101,9 @@ DATABASES = {
 #        'USER': 'root',
 #        'PASSWORD': 'NataSQL$',
 # VERSION VICTOR
-#        'NAME': '',
-#        'USER': '',
-#        'PASSWORD': '',
+#        'NAME': 'sitecartable',
+#        'USER': 'root',
+#        'PASSWORD': 'ewenvictor',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -160,7 +160,7 @@ STATICFILES_DIRS = (
 #   VERSION ROLAND
 #                    "/Users/roland/Projets/static/",
 #   VERSION VICTOR
-#                   "VICTOR met ton chemin ici stp pour accéder à ton dossier static",
+#                    "/Users/jvtraore/GitHub/my-first-blog/static/",
                     )
 
 # Complete automatically URL with slash
