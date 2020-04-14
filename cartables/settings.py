@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
+
 import os
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -156,7 +157,6 @@ STATICFILES_DIRS = (
 #   VERSION CLEMENT
                     "/Users/clem/Documents/GitHub/my-first-blog/static/",
 # VERSION LIONEL
-#                    "LIONEL met ton chemin ici stp pour accéder à ton dossier static",
 #   VERSION ROLAND
 #                    "/Users/roland/Projets/static/",
 #   VERSION VICTOR
