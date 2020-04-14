@@ -58,7 +58,14 @@ ROOT_URLCONF = 'cartables.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/roland/Projets/templates/',''],
+# VERSION CLEMENT
+        'DIRS': ['/Users/clem/Documents/GitHub/my-first-blog/templates/',''],
+# VERSION LIONEL
+#        'DIRS': ['',''],
+# VERSION ROLAND
+#        'DIRS': ['/Users/roland/Projets/templates/',''],
+# VERSION VICTOR
+#        'DIRS': ['',''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,9 +88,22 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
 #        'OPTIONS': {"init_command": "SET foreign_key_checks = 0;"},
+# VERSION CLEMENT
         'NAME': 'site_cartables',
         'USER': 'root',
-        'PASSWORD': 'NataSQL$',
+        'PASSWORD': 'apple123',
+# VERSION LIONEL
+#        'NAME': '',
+#        'USER': '',
+#        'PASSWORD': '',
+# VERSION ROLAND
+#        'NAME': 'site_cartables',
+#        'USER': 'root',
+#        'PASSWORD': 'NataSQL$',
+# VERSION VICTOR
+#        'NAME': '',
+#        'USER': '',
+#        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -133,7 +153,14 @@ STATIC_URL = '/static/'
 # This one was not by default and has been added for this project
 
 STATICFILES_DIRS = (
-                    "/Users/roland/Projets/static/",
+#   VERSION CLEMENT
+                    "/Users/clem/Documents/GitHub/my-first-blog/static/",
+# VERSION LIONEL
+#                    "LIONEL met ton chemin ici stp pour accéder à ton dossier static",
+#   VERSION ROLAND
+#                    "/Users/roland/Projets/static/",
+#   VERSION VICTOR
+#                   "VICTOR met ton chemin ici stp pour accéder à ton dossier static",
                     )
 
 # Complete automatically URL with slash
