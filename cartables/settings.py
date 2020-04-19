@@ -59,15 +59,15 @@ ROOT_URLCONF = 'cartables.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+       'BACKEND': 'django.template.backends.django.DjangoTemplates',
 # VERSION CLEMENT
-        'DIRS': ['/Users/clem/Documents/GitHub/my-first-blog/templates/',''],
+#        'DIRS': ['/Users/clem/Documents/GitHub/my-first-blog/templates/',''],
 # VERSION LIONEL
 #        'DIRS': ['',''],
 # VERSION ROLAND
 #        'DIRS': ['/Users/roland/Projets/templates/',''],
 # VERSION VICTOR
-#        'DIRS': ['/Users/jvtraore/GitHub/my-first-blog/templates/',''],
+        'DIRS': ['/Users/jvtraore/GitHub/my-first-blog/templates/',''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,9 +91,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
 #        'OPTIONS': {"init_command": "SET foreign_key_checks = 0;"},
 # VERSION CLEMENT
-        'NAME': 'site_cartables',
-        'USER': 'root',
-        'PASSWORD': 'apple123',
+#        'NAME': 'site_cartables',
+#        'USER': 'root',
+#        'PASSWORD': 'apple123',
 # VERSION LIONEL
 #        'NAME': '',
 #        'USER': '',
@@ -103,9 +103,9 @@ DATABASES = {
 #        'USER': 'root',
 #        'PASSWORD': 'NataSQL$',
 # VERSION VICTOR
-#        'NAME': 'sitecartable',
-#        'USER': 'root',
-#        'PASSWORD': 'ewenvictor',
+        'NAME': 'sitecartable',
+        'USER': 'root',
+        'PASSWORD': 'ewenvictor',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -156,13 +156,13 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
 #   VERSION CLEMENT
-                    "/Users/clem/Documents/GitHub/my-first-blog/static/",
+#                    "/Users/clem/Documents/GitHub/my-first-blog/static/",
 # VERSION LIONEL
 #                    "Lionel met ton chemin ici stp pour acceder a ton dossier static",
 #   VERSION ROLAND
 #                    "/Users/roland/Projets/static/",
 #   VERSION VICTOR
-#                    "/Users/jvtraore/GitHub/my-first-blog/static/",
+                    "/Users/jvtraore/GitHub/my-first-blog/static/",
                     )
 
 # Complete automatically URL with slash
