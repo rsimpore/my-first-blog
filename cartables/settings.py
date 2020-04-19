@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
+# -*- coding: utf8 -*-
 
 import os
 import pymysql
@@ -157,6 +158,7 @@ STATICFILES_DIRS = (
 #   VERSION CLEMENT
                     "/Users/clem/Documents/GitHub/my-first-blog/static/",
 # VERSION LIONEL
+#                    "Lionel met ton chemin ici stp pour acceder a ton dossier static",
 #   VERSION ROLAND
 #                    "/Users/roland/Projets/static/",
 #   VERSION VICTOR
@@ -164,6 +166,5 @@ STATICFILES_DIRS = (
                     )
 
 # Complete automatically URL with slash
-
 APPEND_SLASH = True
 
