@@ -25,7 +25,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '92+a$08_84ac&*n4xvt&cup&%ymq2=etk#df_l(w0b6t&!n2c)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
+
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','cartablesdafrique.com','https://www.cartablesdafrique.com','www.cartablesdafrique.com']
 
@@ -127,14 +131,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/Users/roland/Projets/static/'
+
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # This one was not by default and has been added for this project
 
-STATICFILES_DIRS = (
-                    "/Users/roland/Projets/static/",
-                    )
+#STATICFILES_DIRS = (
+#                    )
+#
+#if os.environ.get('ENV') == 'PRODUCTION':
+
+    # Static files settings
+#    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+#
+    # Extra places for collectstatic to find static files.
+#        os.path.join(PROJECT_ROOT, 'static'),
+#    )
 
 # Complete automatically URL with slash
 

@@ -14,28 +14,28 @@ def post_list(request):
     return render(request, 'parrainage/post_list.html', {})
 
 
-class LoginView(TemplateView):
+#class LoginView(TemplateView):
 
-  template_name = 'front/index.html'
+#  template_name = 'front/index.html'
 
-  def post(self, request, **kwargs):
+#  def post(self, request, **kwargs):
 
-    username = request.POST.get('username', False)
-    password = request.POST.get('password', False)
-    user = authenticate(username=username, password=password)
-    if user is not None and user.is_active:
-        login(request, user)
-        return HttpResponseRedirect( settings.LOGIN_REDIRECT_URL )
+#    username = request.POST.get('username', False)
+#    password = request.POST.get('password', False)
+#   user = authenticate(username=username, password=password)
+#     if user is not None and user.is_active:
+#         login(request, user)
+#         return HttpResponseRedirect( settings.LOGIN_REDIRECT_URL )
 
-    return render(request, self.template_name)
+#     return render(request, self.template_name)
 
 
-class LogoutView(TemplateView):
+# class LogoutView(TemplateView):
 
-  template_name = 'front/index.html'
+#   template_name = 'front/index.html'
 
-  def get(self, request, **kwargs):
+#   def get(self, request, **kwargs):
 
-    logout(request)
+#     logout(request)
 
-    return render(request, self.template_name)
+#     return render(request, self.template_name)

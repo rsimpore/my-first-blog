@@ -2,5 +2,8 @@
 __pycache__
 myvenv
 db.sqlite3
-/static
+HelpDocumentation.txt
+/cartables/settings.py
+/cartables/GitDoc
+/cartables/README_SiteBuilder
 .DS_Store
