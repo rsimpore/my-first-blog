@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
+# -*- coding: utf8 -*-
+
 import os
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -61,8 +63,15 @@ ROOT_URLCONF = 'cartables.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/roland/Projets/templates/',''],
+       'BACKEND': 'django.template.backends.django.DjangoTemplates',
+# VERSION CLEMENT
+#        'DIRS': ['/Users/clem/Documents/GitHub/my-first-blog/templates/',''],
+# VERSION LIONEL
+#        'DIRS': ['',''],
+# VERSION ROLAND
+#        'DIRS': ['/Users/roland/Projets/templates/',''],
+# VERSION VICTOR
+        'DIRS': ['/Users/jvtraore/GitHub/my-first-blog/templates/',''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,9 +94,22 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
 #        'OPTIONS': {"init_command": "SET foreign_key_checks = 0;"},
-        'NAME': 'site_cartables',
+# VERSION CLEMENT
+#        'NAME': 'site_cartables',
+#        'USER': 'root',
+#        'PASSWORD': 'apple123',
+# VERSION LIONEL
+#        'NAME': '',
+#        'USER': '',
+#        'PASSWORD': '',
+# VERSION ROLAND
+#        'NAME': 'site_cartables',
+#        'USER': 'root',
+#        'PASSWORD': 'NataSQL$',
+# VERSION VICTOR
+        'NAME': 'sitecartable',
         'USER': 'root',
-        'PASSWORD': 'NataSQL$',
+        'PASSWORD': 'ewenvictor',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -138,6 +160,7 @@ STATIC_ROOT = '/Users/roland/Projets/static/'
 
 # This one was not by default and has been added for this project
 
+<<<<<<< HEAD
 #STATICFILES_DIRS = (
 #                    )
 #
@@ -150,8 +173,19 @@ STATIC_ROOT = '/Users/roland/Projets/static/'
     # Extra places for collectstatic to find static files.
 #        os.path.join(PROJECT_ROOT, 'static'),
 #    )
+=======
+STATICFILES_DIRS = (
+#   VERSION CLEMENT
+#                    "/Users/clem/Documents/GitHub/my-first-blog/static/",
+# VERSION LIONEL
+#                    "Lionel met ton chemin ici stp pour acceder a ton dossier static",
+#   VERSION ROLAND
+#                    "/Users/roland/Projets/static/",
+#   VERSION VICTOR
+                    "/Users/jvtraore/GitHub/my-first-blog/static/",
+                    )
+>>>>>>> 0b0f97b63276795a7835ff5da36ab635016fe9ba
 
 # Complete automatically URL with slash
-
 APPEND_SLASH = True
 
