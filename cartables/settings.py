@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import pymysql
+pymysql.version_info = (1, 3, 13, "final", 0)
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -160,7 +161,6 @@ STATIC_ROOT = '/Users/roland/Projets/static/'
 
 # This one was not by default and has been added for this project
 
-<<<<<<< HEAD
 #STATICFILES_DIRS = (
 #                    )
 #
@@ -173,7 +173,7 @@ STATIC_ROOT = '/Users/roland/Projets/static/'
     # Extra places for collectstatic to find static files.
 #        os.path.join(PROJECT_ROOT, 'static'),
 #    )
-=======
+
 STATICFILES_DIRS = (
 #   VERSION CLEMENT
 #                    "/Users/clem/Documents/GitHub/my-first-blog/static/",
@@ -184,7 +184,6 @@ STATICFILES_DIRS = (
 #   VERSION VICTOR
                     "/Users/jvtraore/GitHub/my-first-blog/static/",
                     )
->>>>>>> 0b0f97b63276795a7835ff5da36ab635016fe9ba
 
 # Complete automatically URL with slash
 APPEND_SLASH = True
