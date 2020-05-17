@@ -1,0 +1,54 @@
+{% extends 'acceuil/base.html' %}
+
+{% block title %}
+connexion
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class = "wrapper">
+	<div class = "inner">
+		<section class = "main">
+
+			{% if form.errors %}
+				<code>Your username and password didn't match. Please try again.</code>
+				<br /><br />
+			{% endif %}
+
+			{% if next %}
+				{% if user.is_authenticated %}
+					<p>Your account doesn't have access to this page. To proceed, please login with account that has access.</p>
+				{% else %}
+					<p>Please login to see this page.</p>
+				{% endif %}
+			{% endif %}
+
+			<form method = "post" action = "{% url 'login' %}">
+			{% csrf_token %}
+				<div class = "table-wrapper">
+					<table>
+						<tr>
+							<td>Identifiant</td>
+							<td>{{ form.username }}</td>
+						</tr>
+						<tr>
+							<td>Mot de passe</td>
+							<td>{{ form.password }}</td>
+						</tr>
+					</table>
+					<input type = "submit" value = "Se connecter" class = "primary" />
+					<input type = "hidden" name = "next" value = "{{ next }}" />							
+				</div>
+			</form>
+
+			<p>
+				<a href = "{% url 'password_reset' %}">Mot de passe oublié?</a>
+				<br />
+				Pas encore inscrit? <a href = "{% url 'register' %}">Rejoignez-nous!</a>
+			</p>
+
+		</section>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<!--
+	Altitude by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+-->
+<html>
+{% load static %}
+	<head>
+		<title>Cartables d'Afrique</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'acceuil/assets/css/main.css' %}" />
+		<script>
+			function form_is_valid() {
+				var email = document.forms["edit"]["email"].value;
+				if (email.includes("@") == false) {
+					alert("L'email addresse non valide");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+		<div id="page-wrapper">
+			<!-- Wrapper -->
+			<div class="wrapper">
+				<div class="inner">
+					<!-- Header -->
+					<header id="header">
+						<a href="{% url 'home' %}" class="logo">ASSOCIATION CARTABLES D'AFRIQUE</a>
+						<a href="#" class="logo"><span>{% block title %}{% endblock %}</span></a>
+						<nav>
+							<ul>
+								{% if user.is_authenticated %}
+									Bonjour {{ user.get_short_name }}
+								{% else %}
+								<a href = "{% url 'login' %}">Se connecter</a> | <a href = "{% url 'register' %}">Nous rejoindre</a>
+								{% endif %}
+								<li><a href="#menu">Menu</a></li>
+							</ul>
+						</nav>
+					</header>
+					<!-- Nav -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="{% url 'home' %}">Accueil</a></li>
+							{% if user.is_authenticated %}
+								<li><a href="{% url 'my_profile' %}">Mon Espace Personnel</a></li>
+								<li><a href="#">***Mon Parrainage***</a></li>
+							{% endif %}
+							<li><a href="#">***Nos Actualités***</a></li>
+							<li><a href="#">***Nous Soutenir***</a></li>
+							<li><a href="{% url 'contact' %}">Nous Contacter</a></li>
+						</ul>
+						<ul class="actions stacked">
+							{% if user.is_authenticated %}
+								<li><a href="{% url 'logout' %}" class="button primary fit">Se déconnecter</a></li>
+							{% endif %}
+						</ul>
+					</nav>
+
+					<!-- Block content -->
+					{% block content %}
+					{% endblock %}
+
+					<!-- Footer -->
+					<footer id="footer">
+						<ul class="contact-icons">
+							<li class="icon fa-home">70 Avenue des grésillons, 92600 Asnières Sur Seine</li>
+							<li class="icon fa-phone"><a href="#">(000) 000-0000</a></li>
+							<li class="icon fa-envelope-o"><a href="#">cartablesdafrique@gmail.com</a></li>
+						</ul>
+						<p class="copyright">&copy; Association Cartables d'Afrique. Tous droits réservés.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="{% static 'acceuil/assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'acceuil/assets/js/browser.min.js' %}"></script>
+		<script src="{% static 'acceuil/assets/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'acceuil/assets/js/util.js' %}"></script>
+		<script src="{% static 'acceuil/assets/js/main.js' %}"></script>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'acceuil/base.html' %}
+
+{% block title %}
+page d'inscription
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class = "wrapper">
+	<div class = "inner">
+		<section class = "main">
+
+			<header class="major">
+				<h1>rejoignez-nous</h1>
+			</header>
+
+			<form name = "register" method = "post" action = "#" onsubmit = "return form_is_valid()">
+			{% csrf_token %}
+			<div class = "table-wrapper">
+			<table>
+				<tr>
+					<td>Salutations</td>
+					<td><select id = "gender" name = "gender" required>
+						<option value = 1>Mademoiselle</option>
+						<option value = 2>Madame</option>
+						<option value = 3>Monsieur</option>
+					</select></td>
+				<tr>
+					<td>Nom</td>
+					<td><input type = "text" id = "last_name" name = "last_name" required placeholder = "Votre nom..."></td>
+				</tr>
+				<tr>
+					<td>Prénom</td>
+					<td><input type = "text" id = "first_name" name = "first_name" required placeholder = "Votre prénom..."></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type = "text" id = "email" name = "email" required placeholder = "Votre email..."></td>
+				</tr>
+				<tr>
+					<td>Date de naissance</td>
+					<td><input type = "date" id="birth_date" name = "birth_date" required placeholder = "yyyy-mm-dd"></td>
+				</tr>
+				<tr>
+					<td>Adresse</td>
+					<td><input type = "text" id = "address" name = "address" placeholder = "Veuillez entrer votre adresse..."></td>
+				</tr>
+				<tr>
+					<td>Code Postal</td>
+					<td><input type = "text" id = "postal_code" name = "postal_code" placeholder = "Votre code postal..."></td>
+				</tr>
+				<tr>
+					<td>Ville</td>
+					<td><input type = "text" id = "city" name = "city" placeholder = "Votre ville..."></td>
+				</tr>
+				<tr>
+					<td>Pays</td>
+					<td><input type = "text" id = "country" name = "country" placeholder = "Votre pays..."></td>
+				</tr>
+				<tr>
+					<td>Mot de passe</td>
+					<td><input type = "password" id = "password" name = "password" required placeholder = "Votre mot de passe..."></td>
+				</tr>
+				<tr>
+					<td>Confirmer votre mot de passe</td>
+					<td><input type = "password" id = "password2" name = "password2" required placeholder = "Confirmer votre mot de passe..."></td>
+				</tr>
+			</table>
+			<script src = "https://www.google.com/recaptcha/api.js"></script>
+			<div class = "g-recaptcha" data-sitekey = "6LfYz_EUAAAAAD3bQRY3upNnclv2V1FJJqF9Mx3T"></div><br />
+			<input type = "submit" value = "s'inscrire" class = "primary" />
+			<a href="{% url 'home' %}" class="button">Retour</a>
+			</div>
+			</form>
+
+
+		</section>
+	</div>
+</div>
+{% endblock %}

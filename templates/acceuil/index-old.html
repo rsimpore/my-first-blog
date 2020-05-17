@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<!--
+	Altitude by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+-->
+<html>
+{% load static %}
+	<head>
+		<title>Cartables d'Afrique</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'acceuil/assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Wrapper -->
+					<div class="wrapper">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="{% url 'home' %}" class="logo">
+										ASSOCIATION CARTABLES D'AFRIQUE
+									</a>
+									<a href="#" class="logo">
+										<span>site réalisé bénevolement par les membres</span>
+									</a>
+									<nav>
+										<ul>
+												{% if user.is_authenticated %}
+													Bonjour {{ user.get_short_name }}
+												{% else %}
+													<a href = "{% url 'login' %}">Se connecter</a> | <a href = "{% url 'register' %}">Nous rejoindre</a>
+												{% endif %}
+												<li><a href="#menu">Menu</a></li>
+										</ul>
+										</nav>
+								</header>
+
+							<!-- Nav -->
+								<nav id="menu">
+									<ul class="links">
+										<li><a href="{% url 'home' %}">Accueil</a></li>
+										{% if user.is_authenticated %}
+											<li><a href="{% url 'my_profile' %}">Mon Espace Personnel</a></li>
+											<li><a href="#">***Mon Parrainage***</a></li>
+											<li></li>
+										{% endif %}
+										<li><a href="#">***Nos Actualités***</a></li>
+										<li><a href="#">***Nous Soutenir***</a></li>
+										<li><a href="#">***Nous Contacter***</a></li>
+									</ul>
+									<ul class="actions stacked">
+										{% if user.is_authenticated %}
+											<li><a href="{% url 'logout' %}" class="button primary fit">Se déconnecter</a></li>
+										{% endif %}
+									</ul>
+								</nav>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="items">
+										<section class="accent2">
+											<h1>NOTRE OBJECTIF</h1>
+											<p>donner une chance aux enfants défavorisés au Burkina en suivant et parrainant leur éducation</p>
+											<ul class="actions special">
+												<li><a href="#" class="button primary">En savoir plus</a></li>
+											</ul>
+										</section>
+										<section class="accent3">
+											<h1>QUI SOMMES NOUS?</h1>
+											<p>L'association, en France, est dirigée par un bureau de 8 membres, français, espagnol et burkinabè. </p>
+											<ul class="actions special">
+												<li><a href="#" class="button primary">En savoir plus</a></li>
+											</ul>
+										</section>
+									</div>
+									<div class="slider">
+										<article>
+											<img src="{%static 'acceuil/assets/images/picgroup.jpg' %}" height="100" width="100" alt="" data-position="right" />
+										</article>
+										<article>
+											<img src="{%static 'acceuil/assets/images/enfantsamuse5.jpg' %}" alt="" data-position="right" />
+										</article>
+										<article>
+											<img src="{%static 'acceuil/assets/images/enfantsamuse3.jpg' %}" alt="" data-position="right" />
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Wrapper -->
+					<div class="wrapper">
+						<div class="inner">
+
+							<!-- Section -->
+								<section class="main">
+									<header class="major">
+										<h2>Comment nous soutenir?</h2>
+										<p>Nous aimerions que vous participez à notre aventure</p>
+									</header>
+									<div class="features">
+										<section>
+											<span class="icon fa-hand-o-right major accent2"></span>
+											<h3>Parrainer et suivre</h3>
+											<p>Vous pouvez scolariser et suivre les résultats d'un ou plusieurs enfants</p>
+										</section>
+										<section>
+											<span class="icon fa-credit-card major accent3"></span>
+											<h3>Faire une donation</h3>
+											<p>Vous faîtes une donation pour le fonctionnement de l'association</p>
+										</section>
+										<section>
+											<span class="icon fa-connectdevelop major accent4"></span>
+											<h3>Devenir membre</h3>
+											<p>Devenez membre, apportez vos idées et aidez nous à développer l'association </p>
+										</section>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section class="carousel accent4">
+									<article>
+										<div class="image"><img src="{%static 'acceuil/assets/images/enfantsamuse1.jpg' %}" alt="" data-position="bottom center" /></div>
+										<div class="content">
+											<h3>OUVERTURE DU PROGRAMME 2019/2020</h3>
+											<p>Tout parrainage et toute donation sera enregistrée pour le programme scolaire à partir de Septembre 2019.</p>
+										</div>
+									</article>
+									<article>
+										<div class="image"><img src="{%static 'acceuil/assets/images/enfantsamuse4.jpg' %}" alt="" data-position="bottom center" /></div>
+										<div class="content">
+											<h3>FETE DE FIN D'ANNEE</h3>
+											<p>Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius accumsan.</p>
+										</div>
+									</article>
+									<article>
+										<div class="image"><img src="{%static 'acceuil/assets/images/enfantsamuse.jpg' %}" alt="" data-position="bottom center" /></div>
+										<div class="content">
+											<h3>NOEL DES ENFANTS</h3>
+											<p>Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan lorem ipsum dolor sit amet nullam aliquam.</p>
+										</div>
+									</article>
+									<nav>
+										<a href="#" class="previous"><span class="label">Previous</span></a>
+										<a href="#" class="next"><span class="label">Next</span></a>
+									</nav>
+								</section>
+
+							<!-- Section -->
+								<section class="main">
+									<header class="major">
+										<h2>ETRE PARRAIN/MARRAINE</h2>
+										<p>Vous avez plusieurs possibilités d'aider un enfant défavorisé</p>
+									</header>
+									<div class="spotlights">
+										<article>
+											<div class="image"><img src="{%static 'acceuil/assets/images/enfantsamuse2.jpg' %}" alt="" data-position="center" /></div>
+											<div class="content">
+												<h3>Lire et écrire</h3>
+												<p>En soutenant un enfant du primaire avec 30euros par an, vous lui permettez de savoir lire et écrire.</p>
+												<ul class="actions special">
+													<li><a href="#" class="button primary">Parrainer un élève du primaire</a></li>
+												</ul>
+											</div>
+										</article>
+										<article>
+											<div class="image"><img src="{%static 'acceuil/assets/images/enfantsamuse6.jpg' %}" alt="" data-position="center" /></div>
+											<div class="content">
+												<h3>Accompagnez un talent</h3>
+												<p>Nous avons de talentueux élèves que vous pourrez scolariser avec 170euros par an (jusqu'en 3ème). Suivre et accompagnez ce jeune le plus loin possible sera votre objectif.</p>
+												<ul class="actions special">
+													<li><a href="#" class="button primary">Parrainer un talent</a></li>
+												</ul>
+											</div>
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Wrapper -->
+					<div class="wrapper">
+						<div class="inner">
+
+							<!-- Section -->
+								<section class="main accent2">
+									<header class="major">
+										<h2>RESTEZ INFORME</h2>
+										<p>Pour recevoir toutes nos publications.</p>
+									</header>
+									<form method="post" action="#" class="combined">
+										<input type="email" name="email" id="email" placeholder="Adresse email" class="invert" />
+										<input type="submit" class="primary" value="Sign Up" />
+									</form>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<section class="links">
+										<div>
+											<h3>RESULTATS</h3>
+											<ul class="plain">
+												<li><a href="#">Résultats Clés</a></li>
+												<li><a href="#">Parcours de réussite</a></li>
+												<li><a href="#">Rapports sur les résultats</a></li>
+											</ul>
+										</div>
+										<div>
+											<h3>FINANCEMENT</h3>
+											<ul class="plain">
+												<li><a href="#">Financements</a></li>
+												<li><a href="#">Ressourses utiles</a></li>
+												<li><a href="#">Calendriers pour le financement</a></li>
+											</ul>
+										</div>
+										<div>
+											<h3>INFORMATION SUR</h3>
+											<ul class="plain">
+												<li><a href="#">Conseil d'administration</a></li>
+												<li><a href="#">Comment nous travaillons</a></li>
+												<li><a href="#">Foire aux questions</a></li>
+												<li><a href="#">Contact</a></li>
+											</ul>
+										</div>
+										<div>
+											<h3>ESPACE PROFESSIONEL</h3>
+											<ul class="plain">
+												<li><a href="#">Presse</a></li>
+												<li><a href="#">Entreprise mécène</a></li>
+											</ul>
+										</div>
+									</section>
+									<ul class="contact-icons">
+										<li class="icon fa-home">70 Avenue des grésillons, 92600 Asnières Sur Seine</li>
+										<li class="icon fa-phone"><a href="#">(000) 000-0000</a></li>
+										<li class="icon fa-envelope-o"><a href="#">cartablesdafrique@gmail.com</a></li>
+									</ul>
+									<p class="copyright">&copy; Association Cartables d'Afrique. Tous droits réservés.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{%static 'acceuil/assets/js/jquery.min.js' %}"></script>
+			<script src="{%static 'acceuil/assets/js/browser.min.js' %}"></script>
+			<script src="{%static 'acceuil/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{%static 'acceuil/assets/js/util.js' %}"></script>
+			<script src="{%static 'acceuil/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

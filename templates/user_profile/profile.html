@@ -1,0 +1,66 @@
+{% extends 'acceuil/base.html' %}
+
+{% block title %}
+mon espace personnel
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class = "wrapper">
+	<div class = "inner">
+<!--
+			<a href="#" class="button primary">Vos Informations</a><a href="#" class="button">Vos Parrainages</a>
+-->
+		<section class = "main">
+
+			<header class="major">
+				<h1>vos informations</h1>
+				{% if messages %}
+					{% for message in messages %}
+						<p>{{ message }}</p>
+					{% endfor %}
+				{% endif %}
+			</header>
+
+			<table>
+				<tr>
+					<td>Nom</td>
+					<td>{{ user.last_name }}</td>
+				</tr>
+				<tr>
+					<td>Prénom</td>
+					<td>{{ user.first_name }}</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>{{ user.email }}</td>
+				</tr>
+				<tr>
+					<td>Date de naissance</td>
+					<td>{{ user.user_extd.birth_date }}</td>
+				</tr>
+				<tr>
+					<td>Adresse</td>
+					<td>{{ user.user_extd.address }}</td>
+				</tr>
+				<tr>
+					<td>Code Postal</td>
+					<td>{{ user.user_extd.postal_code }}</td>
+				</tr>
+				<tr>
+					<td>Ville</td>
+					<td>{{ user.user_extd.city }}</td>
+				</tr>
+				<tr>
+					<td>Pays</td>
+					<td>{{ user.user_extd.country }}</td>
+				</tr>
+			</table>
+			<a href="{% url 'edit_profile' %}" class="button primary">Editer</a>
+			<a href="{% url 'home' %}" class="button">Retour</a>
+		</section>
+	</div>
+</div>
+
+{% endblock %}

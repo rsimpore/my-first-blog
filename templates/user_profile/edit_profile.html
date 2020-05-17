@@ -1,0 +1,80 @@
+{% extends 'acceuil/base.html' %}
+
+{% block title %}
+mon espace personnel
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class = "wrapper">
+	<div class = "inner">
+		<section class = "main">
+
+			<header class="major">
+				<h1>mettre à jour mes informations</h1>
+			</header>
+
+			<form name = "edit" method = "post" action = "#" onsubmit = "return form_is_valid()">
+			{% csrf_token %}
+			<div class = "table-wrapper">
+			<table>
+				<tr>
+					<td>Salutations</td>
+					<td><select id = "gender" name = "gender" required>
+						{% if user.user_extd.gender == 1 %}
+						<option value = 1 selected>Mademoiselle</option>
+						<option value = 2>Madame</option>
+						<option value = 3>Monsieur</option>
+						{% endif %}
+						{% if user.user_extd.gender == 2 %}
+						<option value = 1>Mademoiselle</option>
+						<option value = 2 selected>Madame</option>
+						<option value = 3>Monsieur</option>
+						{% endif %}
+						{% if user.user_extd.gender == 3 %}
+						<option value = 1>Mademoiselle</option>
+						<option value = 2>Madame</option>
+						<option value = 3 selected>Monsieur</option>
+						{% endif %}
+					</select></td>
+				<tr>
+					<td>Nom</td>
+					<td><input type = "text" id = "last_name" name = "last_name" required placeholder = "Votre nom..." value = "{{ user.last_name }}"></td>
+				</tr>
+				<tr>
+					<td>Prénom</td>
+					<td><input type = "text" id = "first_name" name = "first_name" required placeholder = "Votre prénom..." value = "{{ user.first_name }}"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type = "text" id = "email" name = "email" required placeholder = "Votre email..." value = "{{ user.email }}"></td>
+				</tr>
+				<tr>
+					<td>Date de naissance</td>
+					<td><input type = "date" id="birth_date" name = "birth_date" required placeholder = "yyyy-mm-dd" value = "{{ user.user_extd.birth_date|date:"Y-m-d" }}"></td>
+				</tr>
+				<tr>
+					<td>Adresse</td>
+					<td><input type = "text" id = "address" name = "address" placeholder = "Veuillez entrer votre adresse..." value = "{{ user.user_extd.address }}"></td>
+				</tr>
+				<tr>
+					<td>Code Postal</td>
+					<td><input type = "text" id = "postal_code" name = "postal_code" placeholder = "Votre code postal..." value = "{{ user.user_extd.postal_code }}"></td>
+				</tr>
+				<tr>
+					<td>Ville</td>
+					<td><input type = "text" id = "city" name = "city" placeholder = "Votre ville..." value = "{{ user.user_extd.city }}"></td>
+				</tr>
+				<tr>
+					<td>Pays</td>
+					<td><input type = "text" id = "country" name = "country" placeholder = "Votre pays..." value = "{{ user.user_extd.country }}"></td>
+				</tr>
+			</table>
+			<input type = "submit" value = "editer" class = "primary" />
+			<a href="{% url 'home' %}" class="button">Retour</a>
+		</section>
+	</div>
+</div>
+
+{% endblock %}

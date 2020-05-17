@@ -1,0 +1,35 @@
+{% extends 'acceuil/base.html' %}
+
+{% block title %}
+connexion
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div id="page-wrapper">
+	<div class="wrapper">
+		<div class="inner">
+			<header id="header">
+				<a href="{% url 'home' %}" class="logo">
+					ASSOCIATION CARTABLES D'AFRIQUE
+				</a>
+				<div class = "logo">
+					<span>page de déconnexion</span>
+				</div>
+			</header>
+		</div>
+	</div>
+</div>
+<div class = "wrapper">
+	<div class = "inner">
+		<section class = "main">
+			<p>Vous êtes déconnecté(e)!</p>
+			<a href = {% url 'home' %}>Retour à l'accueil.</a>
+			<br />
+			<a href = {% url 'login' %}>Cliquez ici pour vous reconnecter.</a>
+		</section>
+	</div>
+</div>
+
+{% endblock %}
