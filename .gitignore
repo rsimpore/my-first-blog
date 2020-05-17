@@ -3,6 +3,11 @@ __pycache__
 myvenv
 venv
 db.sqlite3
+HelpDocumentation.txt
+/cartables/settings.py
+/cartables/GitDoc
+/cartables/README_SiteBuilder
+.DS_Store
 /static
 .DS_Store
 cartables/settings.py
