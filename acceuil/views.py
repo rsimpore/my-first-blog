@@ -39,7 +39,7 @@ def contact(request):
 			message = request.POST['message']
 # Send email
 			email_to_send = EmailMessage(
-				'Vous avez reçu un message de la part de {} {} - {}'.format(first_name , last_name , email),
+				'Vous avez reçu un message de la part de {} {}'.format(first_name , last_name),
 				message,
 				settings.EMAIL_HOST_USER,
 #				[settings.EMAIL_HOST_USER],
