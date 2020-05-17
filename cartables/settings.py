@@ -15,6 +15,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import pymysql
 pymysql.install_as_MySQLdb()
+import local
+from django.contrib.messages import constants as message_constants
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,6 +37,7 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1','cartablesdafrique.com','https://www.ca
 # Application definition
 
 INSTALLED_APPS = [
+    'registration.apps.RegistrationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,14 +63,7 @@ ROOT_URLCONF = 'cartables.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-# VERSION CLEMENT
-        'DIRS': ['/Users/clem/Documents/GitHub/my-first-blog/templates/',''],
-# VERSION LIONEL
-#        'DIRS': ['',''],
-# VERSION ROLAND
-#        'DIRS': ['/Users/roland/Projets/templates/',''],
-# VERSION VICTOR
-#        'DIRS': ['/Users/jvtraore/GitHub/my-first-blog/templates/',''],
+        'DIRS': [local.template_dir,''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,22 +86,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
 #        'OPTIONS': {"init_command": "SET foreign_key_checks = 0;"},
-# VERSION CLEMENT
-        'NAME': 'site_cartables',
-        'USER': 'root',
-        'PASSWORD': 'apple123',
-# VERSION LIONEL
-#        'NAME': '',
-#        'USER': '',
-#        'PASSWORD': '',
-# VERSION ROLAND
-#        'NAME': 'site_cartables',
-#        'USER': 'root',
-#        'PASSWORD': 'NataSQL$',
-# VERSION VICTOR
-#        'NAME': 'sitecartable',
-#        'USER': 'root',
-#        'PASSWORD': 'ewenvictor',
+        'NAME': local.db_name,
+        'USER': local.db_user,
+        'PASSWORD': local.db_pwd,
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -128,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -155,16 +137,30 @@ STATIC_URL = '/static/'
 # This one was not by default and has been added for this project
 
 STATICFILES_DIRS = (
-#   VERSION CLEMENT
-                    "/Users/clem/Documents/GitHub/my-first-blog/static/",
-# VERSION LIONEL
-#                    "Lionel met ton chemin ici stp pour acceder a ton dossier static",
-#   VERSION ROLAND
-#                    "/Users/roland/Projets/static/",
-#   VERSION VICTOR
-#                    "/Users/jvtraore/GitHub/my-first-blog/static/",
+                    local.static_dir,
                     )
 
 # Complete automatically URL with slash
 APPEND_SLASH = True
 
+# Authentication backends
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# LOGIN REDIRECT
+LOGIN_REDIRECT_URL = "/acceuil/"
+
+# EMAIL MANAGEMENT
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cartablesdafrique@gmail.com'
+EMAIL_HOST_PASSWORD = local.email_pwd
+
+# reCAPTCHA SECRET KEY
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LfYz_EUAAAAALCcfGWecvKvK8zOj8bUP5E--VRu'
+
+# Messages
